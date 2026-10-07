@@ -1,0 +1,11 @@
+﻿check,value,target
+n_observations,3066.0,3066.0
+n_students,1533.0,1533.0
+n_cities,26.0,26.0
+n_treated_cities,15.0,15.0
+cesd_min,0.0,0.0
+cesd_max,30.0,30.0
+hi_min,1.0,1.0
+hi_max,5.0,5.0
+balanced_two_waves,1.0,1.0
+consent_all,1.0,1.0

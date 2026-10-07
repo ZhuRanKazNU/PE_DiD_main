@@ -1,0 +1,27 @@
+﻿college_id,college_name,city,treat,UC,reform_start_wave,n_obs
+0,Beijing Normal University,Beijing,1,1,1.0,80
+1,Shanghai Normal University,Shanghai,1,1,1.0,118
+2,Guangzhou Normal University,Guangzhou,1,1,1.0,70
+3,Chengdu Normal University,Chengdu,1,1,1.0,98
+4,Hangzhou Normal University,Hangzhou,1,1,2.0,100
+5,Wuhan Normal University,Wuhan,1,1,2.0,98
+6,Nanjing Normal University,Nanjing,1,1,2.0,86
+7,Tianjin Normal University,Tianjin,1,1,2.0,92
+8,Suzhou Normal University,Suzhou,1,1,2.0,108
+9,Changsha Normal University,Changsha,1,1,3.0,84
+10,Zhengzhou Normal University,Zhengzhou,1,1,3.0,92
+11,Qingdao Normal University,Qingdao,1,0,3.0,200
+12,Dalian Normal University,Dalian,1,0,3.0,140
+13,Xiamen Normal University,Xiamen,1,0,3.0,192
+14,Hefei Normal University,Hefei,1,0,3.0,210
+15,Shenzhen Normal University,Shenzhen,0,1,,206
+16,Chongqing Normal University,Chongqing,0,1,,268
+17,Xi'an Normal University,Xi'an,0,1,,226
+18,Nanchang Normal University,Nanchang,0,0,,90
+19,Fuzhou Normal University,Fuzhou,0,0,,64
+20,Kunming Normal University,Kunming,0,0,,88
+21,Nanning Normal University,Nanning,0,0,,82
+22,Shijiazhuang Normal University,Shijiazhuang,0,0,,66
+23,Taiyuan Normal University,Taiyuan,0,0,,60
+24,Harbin Normal University,Harbin,0,0,,70
+25,Lanzhou Normal University,Lanzhou,0,0,,78

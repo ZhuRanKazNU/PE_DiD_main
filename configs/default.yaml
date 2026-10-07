@@ -1,0 +1,81 @@
+# PE-DiD (PSM + multi-period / time-varying DID) configuration
+# Corresponds to Chapter 3 (Methods) and Chapter 4 (Experiment and Analysis)
+
+seed: 42
+device: cpu
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  checkpoint_dir: checkpoints
+  result_dir: results
+  figure_dir: results/figures
+  table_dir: results/tables
+
+data:
+  n_observations: 3066          # analytic sample after cleaning (Ch.4)
+  n_students: 1533              # balanced panel: 1533 students x 2 waves
+  n_waves: 4                    # multi-period window (time-varying DID)
+  n_cities: 26
+  n_treated_cities: 15
+  n_control_cities: 11
+  # Academic-year observation counts (Table 6)
+  n_year: [768, 912, 682, 704]
+  # Table 2 target moments: treatment vs control
+  table2:
+    treatment:
+      CES-D: {mean: 10.97, std: 5.88}
+      HI: {mean: 3.38, std: 0.91}
+      EF: {mean: 3.21, std: 1.58}
+      Gd: {mean: 0.54, std: 0.50}
+      UC: {mean: 0.58, std: 0.49}
+      SH: {mean: 3.58, std: 0.82}
+      AY: {mean: 2.38, std: 1.07}
+      Maj: {mean: 0.52, std: 0.49}
+      FI: {mean: 3.49, std: 0.89}
+      Edu: {mean: 9.67, std: 3.08}
+    control:
+      CES-D: {mean: 12.46, std: 6.21}
+      HI: {mean: 2.96, std: 0.73}
+      EF: {mean: 2.66, std: 1.61}
+      Gd: {mean: 0.51, std: 0.50}
+      UC: {mean: 0.54, std: 0.46}
+      SH: {mean: 3.31, std: 0.88}
+      AY: {mean: 2.43, std: 1.10}
+      Maj: {mean: 0.59, std: 0.49}
+      FI: {mean: 3.28, std: 0.92}
+      Edu: {mean: 10.21, std: 3.27}
+
+# Target causal effects used in the data-generating process (Chapter 4)
+dgp:
+  tau_did: -1.29                # Table 3, column (4)
+  tau_hi: 0.47                  # Table 8, column (2)
+  tau_ef: 0.38                  # Table 8, column (3)
+  # Heterogeneity multipliers relative to tau_did (Table 6 / Table 7)
+  year_tau: [-1.86, -0.63, -0.71, -1.54]
+  city_tau: {first_tier: -1.68, other: -1.24}
+
+psm:
+  caliper: 0.05                 # propensity-score caliper
+  n_neighbors: 1                # 1:1 nearest neighbor
+  replacement: false
+  target_matched_obs: 2357      # Table 5 observations
+  covariates: [Gd, UC, SH, AY, Maj, FI, Edu]
+
+train:
+  epochs: 300
+  lr: 0.03
+  batch_size: 512
+  val_ratio: 0.20
+  weight_decay: 0.0
+  patience: 50
+  log_every: 50
+
+eval:
+  placebo_reps: 500             # Figure 4 / Section 4.2
+  cluster: student              # student-level SE (paper default)
+  city_cluster_robustness: true
+  significance_levels: [0.01, 0.05, 0.10]
+
+infer:
+  n_examples: 8

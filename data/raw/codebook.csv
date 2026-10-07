@@ -1,0 +1,45 @@
+﻿variable,type,values,definition
+student_id,ID,S0000-S1532,Anonymous student identifier.
+college_id,ID,0-25,University / campus identifier (26 cities).
+city,ID,city name,City of the college.
+wave,time,0-3,Survey wave index in the multi-period window.
+survey_year,time,2021-2024,Calendar year of the survey wave.
+treat,policy,0/1,College ever implements the one-year compulsory PE reform.
+time,policy,0/1,1 if the survey occurs after the college's reform start.
+did,policy,0/1,"time x treated, the core DID indicator in Equations (1)-(5)."
+event_time,policy,integer / NA,Wave relative to college reform start (parallel-trend event study).
+CES-D,Dependent Variable,,CES-D-10 continuous score (0-30); higher = more depressive symptoms.
+time x treated,Key Explanatory Variable,,Equals 1 if the student's college has implemented the PE reform in period t; 0 otherwise.
+HI,Mediating Variable,,"14-item, five-point Likert scale (1-5); higher = more stable exercise habits."
+EF,Mediating Variable,,The number of physical exercises per week.
+Gd,Control Variable,,"Male = 1, female = 0."
+UC,Control Variable,,First-tier city in China = 1; otherwise = 0.
+SH,Control Variable,,Five-point scale (1-5); original item asked about mental health (interpret with caution).
+AY,Control Variable,,First to fourth year (1 to 4).
+Maj,Control Variable,,"Science and engineering = 1, humanities and social sciences = 0."
+FI,Control Variable,,Five-point Likert scale (1-5).
+Edu,Control Variable,,"Illiterate = 0, incomplete primary = 3, primary = 6, junior high = 9, senior high/vocational = 12, junior college = 15, bachelor's degree or above = 16."
+cesd_1,CES-D-10 item (0-3),0-3,I was bothered by things that usually don't bother me.
+cesd_2,CES-D-10 item (0-3),0-3,I had trouble keeping my mind on what I was doing.
+cesd_3,CES-D-10 item (0-3),0-3,I felt depressed.
+cesd_4,CES-D-10 item (0-3),0-3,I felt that everything I did was an effort.
+cesd_5,CES-D-10 item (0-3),0-3,I felt hopeful about the future. Reverse-coded in the total.
+cesd_6,CES-D-10 item (0-3),0-3,I felt fearful.
+cesd_7,CES-D-10 item (0-3),0-3,My sleep was restless.
+cesd_8,CES-D-10 item (0-3),0-3,I was happy. Reverse-coded in the total.
+cesd_9,CES-D-10 item (0-3),0-3,I felt lonely.
+cesd_10,CES-D-10 item (0-3),0-3,I could not get going.
+hi_1,Exercise habit item (1-5),1-5,I exercise at a regular time each week.
+hi_2,Exercise habit item (1-5),1-5,Physical exercise is part of my daily routine.
+hi_3,Exercise habit item (1-5),1-5,I feel uncomfortable if I skip a planned workout.
+hi_4,Exercise habit item (1-5),1-5,I have a relatively fixed place for exercise.
+hi_5,Exercise habit item (1-5),1-5,I keep exercising even when I am busy with coursework.
+hi_6,Exercise habit item (1-5),1-5,My typical workout reaches moderate-to-vigorous intensity.
+hi_7,Exercise habit item (1-5),1-5,Each exercise session lasts long enough to be effective.
+hi_8,Exercise habit item (1-5),1-5,I have a clear weekly exercise plan.
+hi_9,Exercise habit item (1-5),1-5,I enjoy participating in physical exercise.
+hi_10,Exercise habit item (1-5),1-5,I would continue exercising even without PE class requirements.
+hi_11,Exercise habit item (1-5),1-5,"I monitor my exercise (duration, steps, or heart rate)."
+hi_12,Exercise habit item (1-5),1-5,I often exercise with classmates or teammates.
+hi_13,Exercise habit item (1-5),1-5,Starting to exercise feels automatic for me.
+hi_14,Exercise habit item (1-5),1-5,I have maintained this exercise pattern for a long time.
